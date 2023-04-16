@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>DOM manupulation sheet</title>
+<script>
+window.onload = function() {
+var subh2 = document.getElementById("Subheading 2");
+const tags = document.getElementsByTagName("*");
+			let text = ""
+			for (let i = 0; i < tags.length; i++) {
+			text += tags[i].tagName + "<br>";
+			}
+			document.getElementById("demo").innerHTML = text;
+alert("Name of Node with title Subheading 2 :  "+ subh2.nodeName);
+alert("The color of heading node is :  " + subh2.style.color);
+alert("The font family of heading node is :  " + subh2.style.fontFamily);
+alert("Length of child nodes of heading node is :   "+subh2.childNodes.length);
+subh2.style.color="red";
+subh2.style.fontSize="40px";
+
+}
+</script>
+</head>
+<body>
+<h2 title="Healthy Diet">For long life always have good diet.</h2>
+<h1 id="Subheading 2"  style="color: blue; font-family: 'Arial',sans-serif;"> Take one of these furits  daily </h1><br>
+<h1 id="mess"></h1>
+<p>Apple</p>
+ <p>Mango</p>
+ <p> Orange </p>
+ <p>Banana</p>
+ <button id="chg" onclick="change()" >Healthy vegitables</button>
+ <h1>breakfast Menu</h1>
+<ol id="breakfast">
+<li value="beans">beans</li>
+<li value="Cheese">Cheese</li>
+<li value="Milk">Milk</li>
+<li value="Honey">Honey</li>
+</ol>      
+<p>All tags used in this page:</p>
+<p id="demo"></p>
+ <script>
+		function change(){
+		document.getElementById("mess").innerHTML='Take one cup of vegitable in lunch and dinner';
+            let fruit = document.getElementsByTagName('p'); 
+			fruit[0].innerText = 'Tomato';
+			fruit[1].innerText = 'Potato';
+			fruit[2].innerText = 'Onion';
+			fruit[3].innerText = 'Capsicum';
+			var items = document.getElementsByTagName("li");
+			for (var i=0; i < items.length; i++) {
+			alert("healty breakfast items   "+items[i].getAttribute("value"));
+	
+			}
+			const elem=document.getElementById("breakfast").childNodes;
+			alert("Length of child nodes of id with value breakfast :  "+elem.length);
+			for (var i=0; i < elem.length; i++) 
+			{
+			alert("Value of i  "+i);
+			alert("healty breakfast items Name  "+elem[i].innerHTML);
+		}
+		}
+
+</script>
+</body>
+</html>

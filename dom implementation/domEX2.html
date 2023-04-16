@@ -1,0 +1,13 @@
+<!DOCTYPE html><html>
+<head><script>
+window.onload = function() {
+var node=document.createElement("p");
+var textnode = document.createTextNode("This is new para created with DOM .");
+node.appendChild(textnode);
+var element = document.getElementById("div1");
+element.appendChild(node);
+}
+</script></head>
+<body>
+<div id="div1">Example of creating text para with DOM</div>
+</body></html>

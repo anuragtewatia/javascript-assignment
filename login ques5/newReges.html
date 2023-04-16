@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1> Welcome </h1>
+<p> Create a new account by entering useranme and password </p> <br>
+
+<div id="demo" > </div>
+Username <input type="text" id="usrname"><br>
+New Password <input type="password" id="pd"><br>
+Confirm password <input type="password" id="pd2"><br>
+<input type="Submit" value = "Create account" onclick="checkusername()"> <br>
+<div id="demo" > </div>
+
+<script>
+var usernameList =[];    
+var passlist = [];
+function checkusername()
+{
+    if ((usernameList.includes(document.getElementById('usrname').value)))
+    {
+        document.getElementById('demo').innerHTML="Username is already used enter new";
+    }
+    else{
+        if (document.getElementById('pd').value!=document.getElementById('pd2').value) 
+        {
+            document.getElementById("demo").innerHTML="Both password not matching Enter Again";
+        }
+        else if (document.getElementById('pd').value === "" || document.getElementById('pd2').value === "") {
+    document.getElementById("demo").innerHTML = "Please enter a password.";
+
+        }
+        else{
+            usernameList.push(document.getElementById('usrname').value);
+            passlist.push(document.getElementById('pd')).value;
+ 
+            window.location.href = "empgallery.html";
+        }
+    }
+}
+</script>
