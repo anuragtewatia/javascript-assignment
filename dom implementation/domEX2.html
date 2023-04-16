@@ -1,13 +1,24 @@
 <!DOCTYPE html><html>
-<head><script>
-window.onload = function() {
+<head>
+</script></head>
+<body>
+<div id="div1">Example of creating and deleting text para with DOM</div><br>
+<p id="extra">this paragraph will be removed from the DOM.</p><br>
+<input type="button" value="Create delete elements" onclick="myfunction()">
+
+
+<script>
+function myfunction() {
 var node=document.createElement("p");
 var textnode = document.createTextNode("This is new para created with DOM .");
 node.appendChild(textnode);
 var element = document.getElementById("div1");
 element.appendChild(node);
+const extraelement = document.getElementById("extra");
+  extraelement.remove();
+  
 }
-</script></head>
-<body>
-<div id="div1">Example of creating text para with DOM</div>
-</body></html>
+</script>
+</body>
+</html>
+
